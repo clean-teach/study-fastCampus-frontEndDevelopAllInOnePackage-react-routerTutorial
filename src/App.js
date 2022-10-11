@@ -14,12 +14,17 @@ function App() {
           </li>
           <li>
             <Link to='/about'>About</Link>
+            <ul>
+              <li>
+                <Link to='/about?detail=true'>Query</Link>
+              </li>
+            </ul>
           </li>
           <li>
             <Link to='/profile/velopert'>Profile : velopert</Link>
           </li>
           <li>
-          <Link to='/profile/gildong'>Profile : gildong</Link>
+            <Link to='/profile/gildong'>Profile : gildong</Link>
           </li>
         </ul>
       </nav>
