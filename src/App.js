@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, Route, Routes } from "react-router-dom";
 import About from "./About";
 import Home from "./Home";
-import Profile from './Profile';
+import Profiles from './Profiles';
 
 function App() {
   return (
@@ -21,10 +21,7 @@ function App() {
             </ul>
           </li>
           <li>
-            <Link to='/profile/velopert'>Profile : velopert</Link>
-          </li>
-          <li>
-            <Link to='/profile/gildong'>Profile : gildong</Link>
+            <Link to='/profiles'>유저목록</Link>
           </li>
         </ul>
       </nav>
@@ -32,7 +29,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/profile/:username" element={<Profile />} />
+        <Route path="/profiles/*" element={<Profiles />} />
       </Routes>
     </>
   );

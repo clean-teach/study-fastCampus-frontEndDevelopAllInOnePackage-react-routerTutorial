@@ -1,5 +1,5 @@
 import React from 'react';
-import qs from 'qs';
+// import qs from 'qs';
 import { useSearchParams } from 'react-router-dom';
 
 function About({ location }) {
