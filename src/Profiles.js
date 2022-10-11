@@ -1,8 +1,13 @@
 import React from 'react';
-import { Link, Route, Routes } from 'react-router-dom';
+import { Link, NavLink, Route, Routes } from 'react-router-dom';
 import Profile from './Profile';
 
 function Profiles() {
+        let activeStyle = {
+            backgroundColor: "black",
+            color: "white",
+        };
+        
         return (
         <>
             <nav>
@@ -13,6 +18,24 @@ function Profiles() {
                     </li>
                     <li>
                         <Link to='/profiles/gildong'>Profiles : gildong</Link>
+                    </li>
+                    <li>
+                        <NavLink
+                        to="messages"
+                        style={({ isActive }) =>
+                        isActive ? activeStyle : undefined}
+                        >
+                            velopert (NavLink)
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink
+                        to="messages"
+                        style={({ isActive }) =>
+                        isActive ? activeStyle : undefined}
+                        >
+                            gildong (NavLink)
+                        </NavLink>
                     </li>
                 </ul>
             </nav>

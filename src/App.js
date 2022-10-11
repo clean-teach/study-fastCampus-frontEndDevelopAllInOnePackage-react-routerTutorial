@@ -1,10 +1,13 @@
 import React from 'react';
-import { Link, Route, Routes } from "react-router-dom";
+import { Link, Route, Routes, useLocation } from "react-router-dom";
 import About from "./About";
+import HistorySample from './HistorySample';
 import Home from "./Home";
 import Profiles from './Profiles';
 
 function App() {
+  const { pathname } = useLocation();
+
   return (
     <>
       <nav>
@@ -21,7 +24,13 @@ function App() {
             </ul>
           </li>
           <li>
-            <Link to='/profiles'>유저목록</Link>
+            <Link to='/profiles'>Pramas</Link>
+          </li>
+          <li>
+            <Link to='/history'>History</Link>
+          </li>
+          <li>
+            <Link to='/blablablabla'>존재하지 않는 페이지</Link>
           </li>
         </ul>
       </nav>
@@ -30,6 +39,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/profiles/*" element={<Profiles />} />
+        <Route path="/history" element={<HistorySample />} />
+        <Route path='/*' element={ <h1>이 페이지는 존재하지 않습니다. - {pathname}</h1> } />
       </Routes>
     </>
   );
